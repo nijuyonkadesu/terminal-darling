@@ -9,7 +9,7 @@ import (
 
 func main() {
 	app := tview.NewApplication()
-	grid := tview.NewGrid().SetColumns(-1).SetRows(-1)
+	grid := tview.NewGrid().SetRows(0, 10).SetColumns(0)
 	// how to nest items!!! - use grid / flex
 	// box := tview.NewBox()
 
@@ -27,8 +27,8 @@ func main() {
 		}
 	}()
 
-	grid.AddItem(textView, 0, 0, 3, 3, 50, 0, false)
-	grid.AddItem(killButton, 1, 3, 1, 1, 20, 0, true)
+	grid.AddItem(textView, 0, 0, 1, 3, 30, 0, false)
+	grid.AddItem(killButton, 1, 1, 1, 1, 10, 0, true)
 
 	if err := app.SetRoot(grid, true).Run(); err != nil {
 		panic(err)
